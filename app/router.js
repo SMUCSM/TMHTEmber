@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('toppings', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

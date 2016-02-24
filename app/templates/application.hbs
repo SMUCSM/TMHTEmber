@@ -1,3 +1,16 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="two-pane-app">
 
-{{outlet}}
+  <div class="top">
+    <h1 class="title">Pizza Order Pro</h1>
+    <ul class="nav-list">
+      {{#link-to 'toppings' tagName="li"}}Toppings{{/link-to}}
+      <li>Friends</li>
+      <li>Pizzas</li>
+    </ul>
+  </div>
+
+  <div class="bottom">
+    {{outlet}}
+  </div>
+
+</div>

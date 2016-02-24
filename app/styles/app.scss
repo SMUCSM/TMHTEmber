@@ -1,0 +1,152 @@
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900,100,700);
+
+* {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+}
+
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.two-pane-app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  .top {
+    position: absolute;
+    height: 3.75em;
+    padding: 0.75em;
+    padding-left: 1em;
+    line-height: 2.5em;
+    width: 100%;
+    border-bottom: 0.0625em solid rgba(0, 0, 0, 0.1);
+    background-color: lightcoral;
+  }
+  .bottom {
+    position: absolute;
+    top: 3.75em;
+    bottom: 0;
+    width: 100%;
+
+    .left {
+      border-right: 0.0625em solid rgba(0, 0, 0, 0.1);
+      position: absolute;
+      width: 20%;
+      height: 100%;
+
+      button {
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+
+      h3 {
+        margin-left: 10px;
+        text-decoration: underline;
+      }
+
+      .item {
+        padding: 10px;
+        border-bottom: 0.0625em solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        &:hover,
+        &.active {
+          background: rgba(0, 0, 0, 0.1);
+          border-bottom: 0.0625em solid rgba(0, 0, 0, 0);
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+    }
+    .right {
+      position: absolute;
+      width: 80%;
+      right: 0;
+      height: 100%;
+      overflow: auto;
+      padding: 1.25em;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .title {
+    @include inline-block;
+    height: 1em;
+    line-height: 1em;
+    margin: 0;
+  }
+  .nav-list {
+    @include inline-block;
+    margin: 0;
+    list-style-type: none;
+    padding: 0 2em;
+
+    &.right {
+      float: right;
+    }
+
+    li {
+      @include inline-block;
+      padding: 0 1em;
+      cursor: pointer;
+      vertical-align: top;
+      color: #333;
+      border-bottom: 1px solid lightcoral;
+
+      &:hover {
+        color: #000;
+        border-bottom: 1px solid white;
+      }
+
+      &.active {
+        font-weight: bold;
+        color: #fff;
+        border-bottom: 1px solid lightcoral;
+      }
+    }
+  }
+  .login {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 150px;
+
+    input {
+      display: block;
+      margin: 0 auto 5px;
+      padding: 5px;
+    }
+  }
+}
+
+.ember-notify {
+  &.alert {
+    background-color: yellow;
+  }
+  &.warning {
+    background-color: orange;
+  }
+  &.error{
+    background-color: red;
+  }
+  &.success{
+    background-color: lightgreen;
+  }
+  &.info {
+    background-color: lightblue;
+  }
+}

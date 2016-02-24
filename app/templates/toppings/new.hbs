@@ -1,0 +1,17 @@
+<h3>New Topping</h3>
+
+<form {{action 'create' name cost on="submit"}}>
+  <label>
+    Name
+    {{input type="text" placeholder="pepperoni" value=name}}
+  </label>
+
+  <label>
+    Cost
+    {{input type="number" min="0.01" step="0.01" placeholder="1.01" value=cost}}
+  </label>
+
+  {{input type="submit" value="Create Topping"}}
+</form>
+
+<button {{action 'resetForm'}}>Reset</button>

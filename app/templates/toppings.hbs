@@ -1,0 +1,24 @@
+<div class="left">
+  <button>New Topping</button>
+  <hr>
+
+  <h3>Existing Toppings</h3>
+  {{#each model as |topping|}}
+    {{!-- {{#link-to}} --}}
+      <div class="item">
+        {{topping.name}} <br>
+        {{topping.cost}}
+      </div>
+    {{!-- {{/link-to}} --}}
+  {{else}}
+    <div class="item">
+      No toppings found
+    </div>
+  {{/each}}
+</div>
+
+<div class="right">
+  {{outlet}}
+</div>
+
+

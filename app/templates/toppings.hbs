@@ -4,12 +4,10 @@
 
   <h3>Existing Toppings</h3>
   {{#each model as |topping|}}
-    {{!-- {{#link-to}} --}}
-      <div class="item">
-        {{topping.name}} <br>
-        {{topping.cost}}
-      </div>
-    {{!-- {{/link-to}} --}}
+    {{#link-to 'toppings.topping' topping.id tagName="div" class="item"}}
+      {{topping.name}} <br>
+      {{topping.cost}}
+    {{/link-to}}
   {{else}}
     <div class="item">
       No toppings found

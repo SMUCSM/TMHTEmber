@@ -3,6 +3,10 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+| Pizza | + Ember | = App |
+| --- | --- | --- |
+| <img src="http://s58.podbean.com/pb/aa77a6b32c1697330268cd1440860656/56ce3fe5/data2/blogs60/675535/uploads/imagePizza.jpg" width="200"> | ![ember](http://www.gravatar.com/avatar/0cf15665a9146ba852bf042b0652780a?s=200) | ![app](http://digitizd.com/wp/wp-content/uploads/2009/08/iPhone1.jpg) | 
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

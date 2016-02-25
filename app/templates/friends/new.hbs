@@ -1,0 +1,29 @@
+<h3>New Friend</h3>
+
+<form {{action 'create' name cost on="submit"}}>
+  <label>
+    First Name
+    {{input type="text" placeholder="pepperoni" value=firstName}}
+  </label>
+
+  <label>
+    Last Name
+    {{input type="text" placeholder="pepperoni" value=lastName}}
+  </label>
+
+  <label>
+    Likes
+    {{ember-selectize
+        content=toppings
+        optionValuePath="content.id"
+        optionLabelPath="content.name"
+        selection=likes
+        placeholder="Select some toppings yo"
+        multiple=true
+    }}
+  </label>
+
+  {{input type="submit" value="Create Friend"}}
+</form>
+
+<button {{action 'resetForm'}}>Reset</button>

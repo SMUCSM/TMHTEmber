@@ -1,0 +1,22 @@
+<div class="left">
+  {{#link-to 'friends.new' tagName="button"}}New Friend{{/link-to}}
+  <hr>
+
+  <h3>Existing Friends</h3>
+  {{#each model as |friend|}}
+    {{#link-to 'friends.friend' friend.id tagName="div" class="item"}}
+      {{friend.fullName}} <br>
+      Likes {{friend.likes.length}} toppings
+    {{/link-to}}
+  {{else}}
+    <div class="item">
+      No friends found
+    </div>
+  {{/each}}
+</div>
+
+<div class="right">
+  {{outlet}}
+</div>
+
+

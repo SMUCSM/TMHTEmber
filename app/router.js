@@ -10,6 +10,10 @@ Router.map(function() {
     this.route('new');
     this.route('topping', { path: '/:id' });
   });
+  this.route('friends', function() {
+    this.route('new');
+    this.route('friend', { path: '/:id' });
+  });
 });
 
 export default Router;

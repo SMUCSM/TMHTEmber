@@ -1,1 +1,10 @@
-{{outlet}}
+<h3>{{model.fullName}}</h3>
+
+Likes
+<ul>
+  {{#each model.likes as |topping|}}
+    <li>{{topping.name}}</li>
+  {{/each}}
+</ul>
+
+<button {{action 'delete' model}}>Delete</button>

@@ -1,0 +1,23 @@
+<div class="left">
+  {{#link-to 'pizzas.new' tagName="button"}}New Pizza{{/link-to}}
+  <hr>
+
+  <h3>Existing Pizzas</h3>
+  {{#each model as |pizza|}}
+    {{#link-to 'pizzas.pizza' pizza.id tagName="div" class="item"}}
+      {{pizza.name}} <br>
+      has {{pizza.toppings.length}} toppings
+      ordered by {{pizza.friends.length}} friends
+    {{/link-to}}
+  {{else}}
+    <div class="item">
+      No pizzas found
+    </div>
+  {{/each}}
+</div>
+
+<div class="right">
+  {{outlet}}
+</div>
+
+

@@ -1,0 +1,23 @@
+<h3>Pizza: {{model.name}}</h3>
+
+<h3>Toppings</h3>
+<ul>
+  {{#each model.toppings as |topping|}}
+    <li>{{topping.name}}</li>
+  {{/each}}
+</ul>
+
+<h3>Friends</h3>
+<ul>
+  {{#each model.friends as |friend|}}
+    <li>{{friend.fullName}}</li>
+  {{/each}}
+</ul>
+
+<h3>Cost</h3>
+<p>Base cost: {{baseCost}}</p>
+<p>Topping cost: {{toppingCost}}</p>
+<p>tax: {{tax}}</p>
+<p>total: {{totalCost}}</p>
+
+<button {{action 'delete'}}>Delete</button>

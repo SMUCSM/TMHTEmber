@@ -5,7 +5,7 @@
     <ul class="nav-list">
       {{#link-to 'toppings' tagName="li"}}Toppings{{/link-to}}
       {{#link-to 'friends' tagName="li"}}Friends{{/link-to}}
-      <li>Pizzas</li>
+      {{#link-to 'pizzas' tagName="li"}}Pizzas{{/link-to}}
     </ul>
   </div>
 
@@ -14,3 +14,5 @@
   </div>
 
 </div>
+
+{{ember-notify closeAfter=5000}}

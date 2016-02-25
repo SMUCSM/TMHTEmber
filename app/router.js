@@ -14,6 +14,10 @@ Router.map(function() {
     this.route('new');
     this.route('friend', { path: '/:id' });
   });
+  this.route('pizzas', function() {
+    this.route('new');
+    this.route('pizza', { path: '/:id' });
+  });
 });
 
 export default Router;

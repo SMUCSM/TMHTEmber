@@ -1,0 +1,45 @@
+<h3>New Pizza</h3>
+
+<form {{action 'create' name friends toppings on="submit"}}>
+  <label>
+    Name
+    {{input type="text" placeholder="Pepperoni Supreme" value=name}}
+  </label>
+
+  <label>
+    Friends
+    {{ember-selectize
+        content=allFriends
+        optionValuePath="content.id"
+        optionLabelPath="content.fullName"
+        selection=friends
+        placeholder="Select some friends yo"
+        multiple=true
+    }}
+  </label>
+
+  {{#if friends.length}}
+    {{#if applicableToppings.length}}
+      <label>
+        Toppings
+        {{ember-selectize
+            content=applicableToppings
+            optionValuePath="content.id"
+            optionLabelPath="content.name"
+            selection=toppings
+            placeholder="Select some toppings for yo pizza yo"
+            multiple=true
+        }}
+      </label>
+    {{else}}
+      No shared topping interest, maybe get burgers?
+    {{/if}}{{!-- applicableToppings.length --}}
+
+    {{#if toppings.length}}
+      {{input type="submit" value="Create Pizza"}}
+    {{/if}}
+  {{/if}}{{!-- friends.length --}}
+
+</form>
+
+<button {{action 'resetForm'}}>Reset</button>

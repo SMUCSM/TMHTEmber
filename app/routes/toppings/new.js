@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     create(name, cost){
       if (!name || !cost){
         console.log('missing input');
+        this.get('notify').warning('missing input');
         return;
       }
 
@@ -19,9 +20,11 @@ export default Ember.Route.extend({
         (record)=>{
           console.log('new topping saved', record);
           this.send('resetForm');
+          this.get('notify').success("topping saved");
         },
         (error)=>{
           console.log('error saving topping', error);
+          this.get('notify').error("topping not saved");
         }
       );
     },

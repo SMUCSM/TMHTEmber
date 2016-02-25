@@ -10,6 +10,7 @@ export default Ember.Route.extend({
       console.log('deleting', pizza);
       pizza.deleteRecord();
       pizza.save();
+      this.get('notify').success("pizza deleted");
       this.transitionTo('pizzas');
     }
   }

@@ -6,7 +6,7 @@
   {{#each model as |pizza|}}
     {{#link-to 'pizzas.pizza' pizza.id tagName="div" class="item"}}
       {{pizza.name}} <br>
-      has {{pizza.toppings.length}} toppings
+      has {{pizza.toppings.length}} toppings <br>
       ordered by {{pizza.friends.length}} friends
     {{/link-to}}
   {{else}}

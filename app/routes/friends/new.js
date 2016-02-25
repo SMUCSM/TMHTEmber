@@ -11,6 +11,7 @@ export default Ember.Route.extend({
     create(firstName, lastName, likes){
       if (!firstName || !lastName || !likes){
         console.log('missing input');
+        this.get('notify').warning('missing input');
         return;
       }
 
@@ -26,9 +27,11 @@ export default Ember.Route.extend({
         (record)=>{
           console.log('new friend saved', record);
           this.send('resetForm');
+          this.get('notify').success("friend saved");
         },
         (error)=>{
           console.log('error saving friend', error);
+          this.get('notify').error("friend not saved");
         }
       );
     },

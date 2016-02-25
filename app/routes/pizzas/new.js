@@ -14,6 +14,7 @@ export default Ember.Route.extend({
       console.log(name, friends, toppings);
       if (!name || !friends || !toppings){
         console.log('missing input');
+        this.get('notify').warning('missing input');
         return;
       }
 
@@ -29,9 +30,11 @@ export default Ember.Route.extend({
         (record)=>{
           console.log('new pizza saved', record);
           this.send('resetForm');
+          this.get('notify').success("pizza saved");
         },
         (error)=>{
           console.log('error saving pizza', error);
+          this.get('notify').error("pizza not saved");
         }
       );
     },

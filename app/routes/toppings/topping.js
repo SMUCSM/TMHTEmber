@@ -10,6 +10,7 @@ export default Ember.Route.extend({
       console.log('deleting', topping);
       topping.deleteRecord();
       topping.save();
+      this.get('notify').success("topping deleted");
       this.transitionTo('toppings');
     }
   }
